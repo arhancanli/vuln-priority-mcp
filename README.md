@@ -202,9 +202,13 @@ Measured 2026-09-26 with gpt-5.4-mini, 12 fixed tasks graded by fixed checks (`b
 
 | Server | Correct | Input tokens | Output tokens | Tool calls | Median time |
 | --- | --- | --- | --- | --- | --- |
-| This server | 12/12 | 25253 | 520 | 12 | 2.6 s |
-| cve-mcp, the broadest published vulnerability server (41 tools) | 10/12 | 222717 | 742 | 19 | 4.1 s |
+| This server | 12/12 | 25253 | 530 | 12 | 3.0 s |
+| mukul975/cve-mcp-server, the most-starred vulnerability server (28 tools) | 7/12 | 130333 | 1174 | 34 | 3.4 s |
 <!-- bench:end -->
+
+The same tasks against [cve-mcp](https://www.npmjs.com/package/cve-mcp) (41 tools), in a separate run: 10/12 correct with 222,717 input tokens, against 12/12 and 25,253 for this server (`bench/results/2026-09-26-gpt-5.4-mini-cve-mcp.json`).
+mukul975/cve-mcp-server ran from its repository at commit `d666bac` with the MCP Python SDK pinned
+below 2: its default install fails on SDK 2, where FastMCP was renamed.
 
 ## Performance
 
@@ -213,18 +217,18 @@ Measured 2026-09-26 from Dubai, home connection against the live upstream, Node 
 
 | Call | First call | Repeat | Result size |
 | --- | --- | --- | --- |
-| prioritize_vulns: 8 ids (KEV, EPSS-only, advisory alias, unknown, not an id) | 2302 ms | 0.6 ms | 1,933 chars |
-| package_vulns: 4 packages (npm, Maven, PyPI, one clean) | 2017 ms | 3 ms | 6,102 chars |
-| vuln_details: CVE-2023-4863 (libwebp) | 2061 ms | 0.5 ms | 2,829 chars |
-| vuln_details: CVE-2024-3094 (xz, not in KEV) | 1874 ms | 0.4 ms | 1,876 chars |
-| vuln_details: a GHSA advisory | 1248 ms | 0.5 ms | 3,429 chars |
-| recent_exploited: last 30 days | 634 ms | 0.6 ms | 5,196 chars |
-| recent_exploited: Fortinet, ransomware only, 10 years | 592 ms | 0.5 ms | 795 chars |
-| recent_exploited: log4j, 10 years | 780 ms | 1.3 ms | 475 chars |
+| prioritize_vulns: 8 ids (KEV, EPSS-only, advisory alias, unknown, not an id) | 2684 ms | 0.5 ms | 1,933 chars |
+| package_vulns: 4 packages (npm, Maven, PyPI, one clean) | 2863 ms | 3 ms | 6,102 chars |
+| vuln_details: CVE-2023-4863 (libwebp) | 2213 ms | 0.5 ms | 2,829 chars |
+| vuln_details: CVE-2024-3094 (xz, not in KEV) | 2081 ms | 0.4 ms | 1,876 chars |
+| vuln_details: a GHSA advisory | 1386 ms | 0.4 ms | 3,429 chars |
+| recent_exploited: last 30 days | 635 ms | 0.3 ms | 5,196 chars |
+| recent_exploited: Fortinet, ransomware only, 10 years | 647 ms | 0.5 ms | 795 chars |
+| recent_exploited: log4j, 10 years | 587 ms | 1.3 ms | 475 chars |
 
 First call: a fresh server process, including the TLS connection and the upstream's own time. Repeat: the same call again, answered from the in-process cache, so it shows this server's own overhead.
 
-Tool definitions the model reads on every turn (name, description, input schema): 2,298 characters, against 20,295 for cve-mcp, the broadest published vulnerability server (41 tools). The full tool list, with the output schemas and annotations clients use to validate results, is 4,019 characters (21,894 for the alternative).
+Tool definitions the model reads on every turn (name, description, input schema): 2,298 characters, against 12,864 for mukul975/cve-mcp-server, the most-starred vulnerability server (28 tools). The full tool list, with the output schemas and annotations clients use to validate results, is 4,019 characters (16,964 for the alternative).
 <!-- perf:end -->
 
 ## More MCP servers by Arhan Canli

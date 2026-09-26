@@ -1,8 +1,9 @@
 {
   "competitor": {
-    "label": "cve-mcp, the broadest published vulnerability server (41 tools)",
-    "command": "npx",
-    "args": ["-y", "cve-mcp"]
+    "label": "mukul975/cve-mcp-server, the most-starred vulnerability server (28 tools)",
+    "note": "Run from its GitHub repository at a fixed commit, with the MCP Python SDK pinned below 2: its default install fails on SDK 2, where FastMCP was renamed.",
+    "command": "uvx",
+    "args": ["--with", "mcp<2", "--from", "git+https://github.com/mukul975/cve-mcp-server@d666bac3743574cecc98bcbf524558c2bf0d8e61", "cve-mcp"]
   },
   "tasks": [
     { "id": "kev-date", "prompt": "On what date did CISA add CVE-2023-4863 to its Known Exploited Vulnerabilities catalog? Give YYYY-MM-DD only.", "expect": { "contains": ["2023-09-13"] } },

@@ -6,56 +6,56 @@
   "tool_definition_chars": 2298,
   "tools_list_chars": 4019,
   "competitor": {
-    "label": "cve-mcp, the broadest published vulnerability server (41 tools)",
-    "tool_definition_chars": 20295,
-    "tools_list_chars": 21894
+    "label": "mukul975/cve-mcp-server, the most-starred vulnerability server (28 tools)",
+    "tool_definition_chars": 12864,
+    "tools_list_chars": 16964
   },
   "scenarios": [
     {
       "call": "prioritize_vulns: 8 ids (KEV, EPSS-only, advisory alias, unknown, not an id)",
-      "first_call_ms": 2302,
-      "repeat_ms": 0.6,
+      "first_call_ms": 2684,
+      "repeat_ms": 0.5,
       "result_chars": 1933
     },
     {
       "call": "package_vulns: 4 packages (npm, Maven, PyPI, one clean)",
-      "first_call_ms": 2017,
+      "first_call_ms": 2863,
       "repeat_ms": 3,
       "result_chars": 6102
     },
     {
       "call": "vuln_details: CVE-2023-4863 (libwebp)",
-      "first_call_ms": 2061,
+      "first_call_ms": 2213,
       "repeat_ms": 0.5,
       "result_chars": 2829
     },
     {
       "call": "vuln_details: CVE-2024-3094 (xz, not in KEV)",
-      "first_call_ms": 1874,
+      "first_call_ms": 2081,
       "repeat_ms": 0.4,
       "result_chars": 1876
     },
     {
       "call": "vuln_details: a GHSA advisory",
-      "first_call_ms": 1248,
-      "repeat_ms": 0.5,
+      "first_call_ms": 1386,
+      "repeat_ms": 0.4,
       "result_chars": 3429
     },
     {
       "call": "recent_exploited: last 30 days",
-      "first_call_ms": 634,
-      "repeat_ms": 0.6,
+      "first_call_ms": 635,
+      "repeat_ms": 0.3,
       "result_chars": 5196
     },
     {
       "call": "recent_exploited: Fortinet, ransomware only, 10 years",
-      "first_call_ms": 592,
+      "first_call_ms": 647,
       "repeat_ms": 0.5,
       "result_chars": 795
     },
     {
       "call": "recent_exploited: log4j, 10 years",
-      "first_call_ms": 780,
+      "first_call_ms": 587,
       "repeat_ms": 1.3,
       "result_chars": 475
     }
