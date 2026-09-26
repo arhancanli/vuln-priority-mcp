@@ -241,6 +241,7 @@ Tool definitions the model reads on every turn (name, description, input schema)
 - [Package Truth](https://github.com/arhancanli/package-truth-mcp): Checks packages exist before install: version, deprecation, vulnerabilities, licence. 7 ecosystems.
 - [Recall Check](https://github.com/arhancanli/recall-check-mcp): One recall check across CPSC, FDA and NHTSA: match by name, model number, UPC or VIN.
 - [Satellite Imagery](https://github.com/arhancanli/satellite-imagery-mcp): Find the clearest Sentinel-2, Landsat, Sentinel-1 or NAIP scene for any place, with band links.
+- [World Time](https://github.com/arhancanli/world-time-mcp): Time anywhere, DST-safe conversions, holidays for 200+ countries, business days and meeting slots.
 - [The whole collection](https://github.com/arhancanli/mcp-factory#servers)
 <!-- family:end -->
 
