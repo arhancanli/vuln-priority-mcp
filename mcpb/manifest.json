@@ -1,0 +1,63 @@
+{
+  "manifest_version": "0.3",
+  "name": "vuln-priority-mcp",
+  "display_name": "Vuln Priority",
+  "version": "0.1.0",
+  "description": "Ranks CVEs and package vulnerabilities by real-world risk: CISA's Known Exploited Vulnerabilities catalog, FIRST EPSS exploit probability, CVSS, and CISA's SSVC decisions from the CVE record, with the fixed version for each package. No key.",
+  "author": {
+    "name": "Arhan Canli",
+    "url": "https://github.com/arhancanli"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arhancanli/vuln-priority-mcp"
+  },
+  "homepage": "https://github.com/arhancanli/vuln-priority-mcp#readme",
+  "documentation": "https://github.com/arhancanli/vuln-priority-mcp#readme",
+  "support": "https://github.com/arhancanli/vuln-priority-mcp/issues",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "mcp-server",
+    "security"
+  ],
+  "server": {
+    "type": "node",
+    "entry_point": "src/server.mjs",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/src/server.mjs"
+      ]
+    }
+  },
+  "tools": [
+    {
+      "name": "package_vulns",
+      "description": "Rank a project's package vulnerabilities"
+    },
+    {
+      "name": "prioritize_vulns",
+      "description": "Rank vulnerabilities by real-world risk"
+    },
+    {
+      "name": "recent_exploited",
+      "description": "Newly exploited vulnerabilities"
+    },
+    {
+      "name": "vuln_details",
+      "description": "One vulnerability in depth"
+    }
+  ],
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "win32",
+      "linux"
+    ],
+    "runtimes": {
+      "node": ">=20"
+    }
+  }
+}

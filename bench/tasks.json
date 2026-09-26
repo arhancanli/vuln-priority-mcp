@@ -1,0 +1,21 @@
+{
+  "competitor": {
+    "label": "cve-mcp, the broadest published vulnerability server (41 tools)",
+    "command": "npx",
+    "args": ["-y", "cve-mcp"]
+  },
+  "tasks": [
+    { "id": "kev-date", "prompt": "On what date did CISA add CVE-2023-4863 to its Known Exploited Vulnerabilities catalog? Give YYYY-MM-DD only.", "expect": { "contains": ["2023-09-13"] } },
+    { "id": "fix-first", "prompt": "A scanner reports CVE-2020-8203, CVE-2024-3094, CVE-2021-44228 and CVE-2019-10744. Which one should be fixed first because it is known to be exploited in the wild? Give the CVE id only.", "expect": { "regex": "^\\W*CVE-2021-44228\\W*$" } },
+    { "id": "ransomware", "prompt": "According to CISA, is CVE-2023-4966 known to be used in ransomware campaigns? Answer yes or no.", "expect": { "regex": "^\\W*yes\\b" } },
+    { "id": "due-date", "prompt": "What remediation due date did CISA set for federal agencies for CVE-2024-3400? Give YYYY-MM-DD only.", "expect": { "contains": ["2024-04-19"] } },
+    { "id": "xz-kev", "prompt": "Is CVE-2024-3094 (the xz backdoor) in CISA's Known Exploited Vulnerabilities catalog? Answer yes or no.", "expect": { "regex": "^\\W*no\\b" } },
+    { "id": "ssvc", "prompt": "What Technical Impact did CISA's SSVC assessment assign to CVE-2023-4863? Answer partial or total.", "expect": { "regex": "^\\W*total\\b" } },
+    { "id": "ghsa-cve", "prompt": "Which CVE is the GitHub advisory GHSA-jfh8-c2jp-5v3q? Give the CVE id only.", "expect": { "contains": ["CVE-2021-44228"] } },
+    { "id": "log4j-fix", "prompt": "A Java project uses the Maven package org.apache.logging.log4j:log4j-core at version 2.14.1. What is the lowest version that fixes CVE-2021-45046 for it? Give the version only.", "expect": { "regex": "^\\W*2\\.16\\.0\\W*$" } },
+    { "id": "kev-count", "prompt": "How many vulnerabilities did CISA add to its Known Exploited Vulnerabilities catalog on 2026-09-25? Give the number only.", "expect": { "number": 3 } },
+    { "id": "cvss", "prompt": "What is the CVSS 3.1 base score of CVE-2020-8203? Give the number only.", "expect": { "number": 7.4, "tol": 0.05 } },
+    { "id": "lodash-all", "prompt": "An npm project uses lodash 4.17.15. What is the lowest lodash version that fixes every known vulnerability affecting that version? Give the version only.", "expect": { "regex": "^\\W*4\\.18\\.0\\W*$" } },
+    { "id": "log4j-all", "prompt": "A Java project uses the Maven package org.apache.logging.log4j:log4j-core at version 2.14.1. What is the lowest version that fixes every known vulnerability affecting it? Give the version only.", "expect": { "regex": "^\\W*2\\.25\\.4\\W*$" } }
+  ]
+}

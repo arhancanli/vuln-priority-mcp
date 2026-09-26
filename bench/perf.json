@@ -1,0 +1,80 @@
+{
+  "measured_on": "2026-09-26",
+  "where": "Dubai, home connection",
+  "node": "v24.19.0",
+  "runs": 5,
+  "tool_definition_chars": 2298,
+  "tools_list_chars": 4019,
+  "competitor": {
+    "label": "cve-mcp, the broadest published vulnerability server (41 tools)",
+    "tool_definition_chars": 20295,
+    "tools_list_chars": 21894
+  },
+  "scenarios": [
+    {
+      "call": "prioritize_vulns: 8 ids (KEV, EPSS-only, advisory alias, unknown, not an id)",
+      "first_call_ms": 2302,
+      "repeat_ms": 0.6,
+      "result_chars": 1933
+    },
+    {
+      "call": "package_vulns: 4 packages (npm, Maven, PyPI, one clean)",
+      "first_call_ms": 2017,
+      "repeat_ms": 3,
+      "result_chars": 6102
+    },
+    {
+      "call": "vuln_details: CVE-2023-4863 (libwebp)",
+      "first_call_ms": 2061,
+      "repeat_ms": 0.5,
+      "result_chars": 2829
+    },
+    {
+      "call": "vuln_details: CVE-2024-3094 (xz, not in KEV)",
+      "first_call_ms": 1874,
+      "repeat_ms": 0.4,
+      "result_chars": 1876
+    },
+    {
+      "call": "vuln_details: a GHSA advisory",
+      "first_call_ms": 1248,
+      "repeat_ms": 0.5,
+      "result_chars": 3429
+    },
+    {
+      "call": "recent_exploited: last 30 days",
+      "first_call_ms": 634,
+      "repeat_ms": 0.6,
+      "result_chars": 5196
+    },
+    {
+      "call": "recent_exploited: Fortinet, ransomware only, 10 years",
+      "first_call_ms": 592,
+      "repeat_ms": 0.5,
+      "result_chars": 795
+    },
+    {
+      "call": "recent_exploited: log4j, 10 years",
+      "first_call_ms": 780,
+      "repeat_ms": 1.3,
+      "result_chars": 475
+    }
+  ],
+  "example": {
+    "call": "prioritize_vulns: 8 ids (KEV, EPSS-only, advisory alias, unknown, not an id)",
+    "tool": "prioritize_vulns",
+    "arguments": {
+      "ids": [
+        "CVE-2021-44228",
+        "CVE-2023-4863",
+        "CVE-2024-3094",
+        "CVE-2020-8203",
+        "GHSA-jfh8-c2jp-5v3q",
+        "CVE-2019-10744",
+        "CVE-2099-99999",
+        "not an id"
+      ]
+    },
+    "result": "{\"counts\":{\"act_now\":3,\"high\":1,\"medium\":2,\"unknown\":2},\"results\":[{\"id\":\"CVE-2021-44228\",\"tier\":\"act_now\",\"why\":\"in CISA KEV since 2021-12-10, used by ransomware\",\"kev_added\":\"2021-12-10\",\"kev_due\":\"2021-12-24\",\"ransomware\":true,\"epss\":0.99999,\"epss_percentile\":1,\"cvss\":10,\"severity\":\"critical\",\"ssvc\":\"active/yes/total\",\"name\":\"Apache Log4j2 Remote Code Execution Vulnerability\"},{\"id\":\"GHSA-jfh8-c2jp-5v3q\",\"cve\":\"CVE-2021-44228\",\"tier\":\"act_now\",\"why\":\"in CISA KEV since 2021-12-10, used by ransomware\",\"kev_added\":\"2021-12-10\",\"kev_due\":\"2021-12-24\",\"ransomware\":true,\"epss\":0.99999,\"epss_percentile\":1,\"cvss\":10,\"severity\":\"critical\",\"ssvc\":\"active/yes/total\",\"name\":\"Apache Log4j2 Remote Code Execution Vulnerability\"},{\"id\":\"CVE-2023-4863\",\"tier\":\"act_now\",\"why\":\"in CISA KEV since 2023-09-13\",\"kev_added\":\"2023-09-13\",\"kev_due\":\"2023-10-04\",\"epss\":0.99979,\"epss_percentile\":0.9998,\"cvss\":8.8,\"severity\":\"high\",\"ssvc\":\"active/no/total\",\"name\":\"Google Chromium WebP Heap-Based Buffer Overflow Vulnerability\"},{\"id\":\"CVE-2024-3094\",\"tier\":\"high\",\"why\":\"EPSS 0.85974: 86% chance of exploitation within 30 days; not in CISA KEV\",\"epss\":0.85974,\"epss_percentile\":0.9972,\"cvss\":10,\"severity\":\"critical\",\"ssvc\":\"none/yes/total\",\"name\":\"Xz: malicious code in distributed source\"},{\"id\":\"CVE-2020-8203\",\"tier\":\"medium\",\"why\":\"EPSS 0.05213: 5.2% chance of exploitation within 30 days; not in CISA KEV\",\"epss\":0.05213,\"epss_percentile\":0.9221,\"name\":\"Prototype pollution attack when using _.zipObjectDeep in lodash before 4.17.20\"},{\"id\":\"CVE-2019-10744\",\"tier\":\"medium\",\"why\":\"EPSS 0.05006: 5% chance of exploitation within 30 days; not in CISA KEV\",\"epss\":0.05006,\"epss_percentile\":0.9194,\"name\":\"Versions of lodash lower than 4.17.12 are vulnerable to Prototype Pollution\"},{\"id\":\"CVE-2099-99999\",\"tier\":\"unknown\",\"why\":\"no CVE record, KEV entry or EPSS score\"},{\"id\":\"not an id\",\"tier\":\"unknown\",\"why\":\"not a CVE or advisory id\"}]}"
+  }
+}
