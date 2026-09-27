@@ -242,7 +242,7 @@ Tool definitions the model reads on every turn (name, description, input schema)
 - [Dockerfile Check](https://github.com/arhancanli/dockerfile-check-mcp): Checks Dockerfiles: build-breaking mistakes, base image tags that exist, digests, platforms, EOL.
 - [Domain Health](https://github.com/arhancanli/domain-health-mcp): Email and domain checks: SPF lookup limits, DKIM keys, DMARC, DNS records, registration expiry.
 - [Drug Label](https://github.com/arhancanli/drug-label-mcp): FDA drug label answers with section citations, RxNorm name resolution, recalls and shortages.
-- [The whole collection](https://github.com/arhancanli/mcp-factory#servers), 10 more
+- [The whole collection](https://github.com/arhancanli/mcp-factory#servers), 11 more
 <!-- family:end -->
 
 ## License
