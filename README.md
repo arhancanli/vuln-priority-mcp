@@ -242,7 +242,7 @@ Tool definitions the model reads on every turn (name, description, input schema)
 - [Domain Health](https://github.com/arhancanli/domain-health-mcp): Email and domain checks: SPF lookup limits, DKIM keys, DMARC, DNS records, registration expiry.
 - [Drug Label](https://github.com/arhancanli/drug-label-mcp): FDA drug label answers with section citations, RxNorm name resolution, recalls and shortages.
 - [End of Life](https://github.com/arhancanli/end-of-life-mcp): Is this version still supported? EOL dates, latest patch and upgrade target for 470+ products.
-- [The whole collection](https://github.com/arhancanli/mcp-factory#servers), 8 more
+- [The whole collection](https://github.com/arhancanli/mcp-factory#servers), 9 more
 <!-- family:end -->
 
 ## License
